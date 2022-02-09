@@ -73,6 +73,8 @@ const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+.icon{
+margin-right:10px}
 `;
 
 const Payment = styled.img`
@@ -122,14 +124,14 @@ const Footer = () => {
 			<Right>
 				<Title>Contact</Title>
 				<ContactItem>
-					<RoomIcon style={{ marginRight: '10px' }} /> 622 Dixie Path ,
-					South Tobinchester 98336
+					<RoomIcon className='icon' /> 622 Dixie Path , South
+					Tobinchester 98336
 				</ContactItem>
 				<ContactItem>
-					<PhoneIcon style={{ marginRight: '10px' }} /> +1 234 56 78
+					<PhoneIcon className='icon' /> +1 234 56 78
 				</ContactItem>
 				<ContactItem>
-					<MailOutlineIcon style={{ marginRight: '10px' }} />{' '}
+					<MailOutlineIcon className='icon' />
 					contact@shopping.dev
 				</ContactItem>
 				<Payment src='https://i.ibb.co/Qfvn4z6/payment.png' />
