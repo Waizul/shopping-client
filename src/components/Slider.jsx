@@ -4,6 +4,7 @@ import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import {sliderItems} from '../data'
 import { ListItemSecondaryAction } from "@mui/material";
 import { useState } from "react";
+import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
 	width: 100%;
@@ -11,6 +12,7 @@ const Container = styled.div`
 	display: flex;
 	position: relative;
 	overflow: hidden;
+	${mobile({ height: '50vh' })}
 `;
 const Arrow = styled.div`
 	width: 50px;
@@ -31,7 +33,7 @@ const Arrow = styled.div`
 	z-index: 2;
 `;
 const Wrapper = styled.div`
-	height: 100%;
+	/* height: 100%; */
 	display: flex;
 transition:all 1.5s ease;
 transform: TranslateX(${ props=>props.slideIndex* -100}vw)
@@ -42,17 +44,22 @@ const Slide = styled.div`
 	display: flex;
 	align-items: center;
 	background-color: #${(props) => props.bg};
+	${mobile({ height: '50vh' })}
 `;
 const ImgContainer = styled.div`
-	height: 100%;
 	flex: 1;
 `;
 const Image = styled.img`
+	width: 100%;
 	height: 80%;
+	object-fit: cover;
+	${mobile({ height: '50%' })}
 `;
 const InfoContainer = styled.div`
 	flex: 1;
-	padding: 50px;
+	/* padding: 50px; */
+	${mobile({ display: 'none' })}
+	${tablet({ display: 'none' })};
 `;
 const Title = styled.h1`
 	font-size: 70px;

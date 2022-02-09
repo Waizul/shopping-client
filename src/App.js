@@ -9,12 +9,12 @@ function App() {
   return (
     <div>
       <GlobalStyles/>
-      {/* <Home/> */}
+      <Home/>
       {/* <ProductList/> */}
       {/* <SingleProduct/> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      <Cart/>
+      {/* <Cart/> */}
     </div>
   );
 }
