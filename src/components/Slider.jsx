@@ -57,24 +57,27 @@ const Image = styled.img`
 `;
 const InfoContainer = styled.div`
 	flex: 1;
-	/* padding: 50px; */
-	${mobile({ display: 'none' })}
-	${tablet({ display: 'none' })};
+	padding: 50px;
+	${mobile({ flex: 0,display:'flex',flexDirection:'column',alignItems:'flex-start',width:'50vw', paddingLeft:'5px',position:'absolute',top:'20px',paddingTop:'0' })}
+	${tablet({ flex: 0,position:'absolute' })};
 `;
 const Title = styled.h1`
 	font-size: 70px;
+	${mobile({fontSize:'20px'})}
 `;
 const Desc = styled.p`
 	margin: 50px 0px;
 	font-size: 20px;
 	font-weight: 500;
 	letter-spacing: 3px;
+	${mobile({fontSize:'14px',width:'80%',margin:'5px 0px', background:'transparent',letterSpacing:'1.5px'})}
 `;
 const Button = styled.button`
 	padding: 10px;
 	font-size: 20px;
 	background-color: transparent;
 	cursor: pointer;
+	${mobile({fontSize:'14px',width:'50%',padding:'2px 0px', margin:'10px 0px', letterSpacing:'1.5px'})}
 `;
 
 const Slider = () => {
