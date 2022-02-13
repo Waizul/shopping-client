@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import {StyledLink} from '../GlobalStyles'
 const Info = styled.div`
 	opacity: 0;
 	width: 100%;
@@ -70,9 +71,11 @@ const Product = ({item}) => {
 				<Icon>
 					<ShoppingCartOutlinedIcon />
 				</Icon>
+				<StyledLink to={`/product/${item.id}`}>
 				<Icon>
 					<SearchOutlinedIcon />
 				</Icon>
+				</StyledLink>
 				<Icon>
 					<FavoriteBorderOutlinedIcon />
 				</Icon>

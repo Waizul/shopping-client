@@ -5,6 +5,8 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
 import { mobile } from "../responsive";
+import { popularProducts } from "../data";
+import { useParams } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -115,13 +117,16 @@ const Button = styled.button`
 `;
 
 const SingleProduct = () => {
+	const {id} = useParams()
+	const img = popularProducts.find(item=>item.id==id)
+	console.log(img.img)
 	return (
 		<Container>
 			<Navbar />
 			<Announcement />
 			<Wrapper>
 				<ImgContainer>
-					<Image src='https://i.ibb.co/S6qMxwr/jean.jpg' />
+					<Image src={img.img} />
 				</ImgContainer>
 				<InfoContainer>
 					<Title>Denim Jumpsuit</Title>
