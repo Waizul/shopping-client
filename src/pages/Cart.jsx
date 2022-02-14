@@ -6,6 +6,13 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile, tablet } from "../responsive";
 import { useSelector } from "react-redux";
+import StripeCheckOut from 'react-stripe-checkout'
+import { useState,useEffect } from 'react'
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+
+
+const KEY = process.env.REACT_APP_STRIPE_KEY
 
 const Container = styled.div``;
 
@@ -154,10 +161,33 @@ const Button = styled.button`
 	background-color: black;
 	color: white;
 	font-weight: 600;
+	cursor: pointer !important;
 `;
 
 const Cart = () => {
 	const cart = useSelector(state=>state.cart)
+	const [stripeToken,setStripeToken] = useState(null)
+const navigate = useNavigate()
+
+	const onToken = token => {
+setStripeToken(token)
+}
+
+useEffect(() => {
+  const makeRequest= async () => {
+	try {
+		const res = await axios.post('http://localhost:5000/checkout/payment',{
+			tokenId : stripeToken.id,
+			amount: cart.total
+		})
+		navigate('/success')
+		console.log(res.data)
+	} catch (err) {
+		console.log(err)
+	}
+	stripeToken && cart.total>0 && makeRequest()
+  };
+}, [stripeToken,cart.total,navigate])
 	return (
 		<Container>
 			<Navbar />
@@ -174,7 +204,7 @@ const Cart = () => {
 				</Top>
 				<Bottom>
 					<Info>
-						{ cart.products.map(product=><Product>
+						{ cart.products.map(product=><Product key={product._id}>
 							<ProductDetail>
 								<Image src= {product.img} />
 								<Details>
@@ -223,7 +253,19 @@ const Cart = () => {
 							<SummaryItemText>Total</SummaryItemText>
 							<SummaryItemPrice>$ {cart.total }</SummaryItemPrice>
 						</SummaryItem>
+						<StripeCheckOut
+						name='Shopping'
+						image='https://avatars.githubusercontent.com/u/1486366?v=4'
+						billingAddress
+						shippingAddress
+						description={`Your total is $${cart.total}`}
+						amount={cart.total*100}
+						token={onToken}
+						stripeKey={KEY}
+						>
+
 						<Button>CHECKOUT NOW</Button>
+						</StripeCheckOut>
 					</Summary>
 				</Bottom>
 			</Wrapper>
