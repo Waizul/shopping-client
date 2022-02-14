@@ -2,6 +2,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Badge } from "@mui/material";
 import { Link } from "react-router-dom";
+import {useSelector} from 'react-redux'
 import styled from "styled-components";
 import { StyledLink } from "../GlobalStyles";
 import { laptop, mobile, tablet } from "../responsive";
@@ -77,6 +78,8 @@ const NavItem = styled.div`
   ${tablet({ fontSize: "12px", marginLeft: "10px" })};
 `;
 const Navbar = () => {
+  const quantity = useSelector(state=>state.cart.quantity)
+  console.log(quantity)
   return (
     <Container>
       <Wrapper>
@@ -101,7 +104,7 @@ const Navbar = () => {
           </StyledLink>
           <StyledLink to="/cart">
             <NavItem>
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={quantity} color="primary">
                 <ShoppingCartOutlinedIcon />
               </Badge>
             </NavItem>
