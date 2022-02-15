@@ -1,95 +1,103 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { login } from "../redux/apiCallls";
 
 const Container = styled.div`
-	width: 100vw;
-	height: 100vh;
-	background: linear-gradient(
-			rgba(255, 255, 255, 0.5),
-			rgba(255, 255, 255, 0.5)
-		),
-		url('https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
-			center;
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+      center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
-	width: 25%;
-	padding: 20px;
-	background-color: white;
-	${mobile({ width: '75%' })}
+  width: 25%;
+  padding: 20px;
+  background-color: white;
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
-	font-size: 24px;
-	font-weight: 300;
+  font-size: 24px;
+  font-weight: 300;
 `;
 
 const Form = styled.form`
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
-	flex: 1;
-	min-width: 40%;
-	margin: 10px 0;
-	padding: 10px;
+  flex: 1;
+  min-width: 40%;
+  margin: 10px 0;
+  padding: 10px;
 `;
 
 const Button = styled.button`
-	width: 40%;
-	border: none;
-	padding: 15px 20px;
-	background-color: teal;
-	color: white;
-	cursor: pointer;
-	margin-bottom: 10px;
-&:hover{
-background-color:rgb(10,10,100)}
+  width: 40%;
+  border: none;
+  padding: 15px 20px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+  &:hover {
+    background-color: rgb(10, 10, 100);
+  }
 `;
 
 const Link = styled.a`
-	margin: 5px 0px;
-	font-size: 12px;
-	/* text-decoration: underline; */
-	cursor: pointer;
-	&:hover {
-		color: gray;
-	}
+  margin: 5px 0px;
+  font-size: 12px;
+  /* text-decoration: underline; */
+  cursor: pointer;
+  &:hover {
+    color: gray;
+  }
 `;
 
 const Login = () => {
-	const [username,setUsername] = useState('')
-	const[password,setPassword] = useState('')
-	const dispatch = useDispatch()
-	
-const handleInput = e=>{
-	e.preventDefault()
-	const userCredentials = {username,password}
-	console.log(userCredentials)
-login(dispatch,userCredentials)
-} 
-  return (
-		<Container>
-			<Wrapper>
-				<Title>SIGN IN</Title>
-				<Form>
-					<Input placeholder='username' onBlur={e=>setUsername(e.target.value)} />
-					<Input placeholder='password' onBlur={e=>setPassword(e.target.value)} />
-					<Button onClick={handleInput}>LOGIN</Button>
-					<Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-					<Link>CREATE A NEW ACCOUNT</Link>
-				</Form>
-			</Wrapper>
-		</Container>
-  );
-}
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
-export default Login
+  const handleInput = (e) => {
+    e.preventDefault();
+    const userCredentials = { username, password };
+
+    login(dispatch, userCredentials);
+  };
+  
+  return (
+    <Container>
+      <Wrapper>
+        <Title>SIGN IN</Title>
+        <Form>
+          <Input
+            placeholder="username"
+            onBlur={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            placeholder="password"
+            onBlur={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={handleInput}>LOGIN</Button>
+          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+          <Link>CREATE A NEW ACCOUNT</Link>
+        </Form>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default Login;
