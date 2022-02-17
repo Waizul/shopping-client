@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const BASE_URL = "https://shoppingbd.herokuapp.com/"
+const BASE_URL = "https://shoppingbd-server.herokuapp.com"
 
 const  TOKEN = localStorage.getItem('persist:root') ? JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser?.accessToken : ''
 
