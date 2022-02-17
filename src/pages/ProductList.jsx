@@ -50,12 +50,13 @@ const ProductList = () => {
 			[e.target.name]:value.toLowerCase()
 		})
 	}
-	console.log(category,filters)
+	
+	
 	return (
 		<Container>
 			<Announcement />
 			<Navbar />
-			<Title>{category}</Title>
+			<Title>{category.toUpperCase()}</Title>
 			<FilterContainer>
 				<Filter>
 					<FilterText>Filter Products:</FilterText>

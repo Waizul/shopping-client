@@ -25,6 +25,8 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  ${mobile({display:'none' })};
+  ${tablet({ display:'none' })};
 `;
 
 const Language = styled.span`
@@ -50,10 +52,15 @@ const Input = styled.input`
   ${tablet({ width: "100px" })};
 `;
 const Center = styled.div`
-  flex: 1;
+  flex: 2;
   text-align: center;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 `;
 const Logo = styled.h1`
+font-size: 30px;
   font-weight: bold;
   color: rgb(50, 150, 120);
   ${mobile({ fontSize: "24px" })};
@@ -93,6 +100,9 @@ const Navbar = () => {
         <Center>
           <StyledLink to="/">
             <Logo>Shopping</Logo>
+          </StyledLink>
+          <StyledLink to="/">
+            Categories
           </StyledLink>
         </Center>
         <Right>

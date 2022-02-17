@@ -1,45 +1,49 @@
 export const sliderItems = [
 	{
 		id: 1,
-		img: 'https://i.ibb.co/cXFnLLV/3.png',
+		img: 'https://i.ibb.co/wCT3VcC/featured-men-coat.jpg',
 		title: 'SUMMER SALE',
 		desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
 		bg: 'f5fafd',
 	},
 	{
 		id: 2,
-		img: 'https://i.ibb.co/DG69bQ4/2.png',
+		img: 'https://i.ibb.co/vdgSxKT/featured-women-coat.jpg',
 		title: 'AUTUMN COLLECTION',
 		desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
 		bg: 'fcf1ed',
 	},
 	{
 		id: 3,
-		img: 'https://i.ibb.co/cXFnLLV/3.png',
-		title: 'LOUNGEWEAR LOVE',
+		img: 'https://i.ibb.co/nrP336m/featured-jacket.jpg',
+		title: 'JACKET COLLECTION',
 		desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
 		bg: 'fbf0f4',
 	},
 ];
 
+
+
+
 export const categories = [
 	{
 		id: 1,
-		img: 'https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-		title: 'SHIRT STYLE!',
-		cat:'woman'
+		img: 'https://i.ibb.co/WnCgfXC/men-collection.jpg',
+		title: 'MEN STYLE',
+		cat:'men'
 	},
 	{
 		id: 2,
-		img: 'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-		title: 'LOUNGEWEAR LOVE',
-		cat:'coat'
+		img: 'https://i.ibb.co/kBTQ5GS/shirt-style.jpg',
+		title: 'WOMEN STYLE!',
+		
+		cat:'women'
 	},
 	{
 		id: 3,
-		img: 'https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-		title: 'LIGHT JACKETS',
-		cat:'man'
+		img: 'https://i.ibb.co/XCMfzvF/jacket-collection.jpg',
+		title:'JACKET',
+		cat:'jacket'
 	},
 ];
 

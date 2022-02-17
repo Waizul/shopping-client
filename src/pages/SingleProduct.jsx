@@ -5,12 +5,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
 import { mobile } from "../responsive";
-import { popularProducts } from "../data";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import {addProduct} from '../redux/cartRedux'
+import { publicRequest } from "../requestMethods";
 
 const Container = styled.div``;
 
@@ -131,8 +130,8 @@ const SingleProduct = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(
-          `http://localhost:5000/products/find/${id}`
+        const res = await publicRequest.get(
+          `/products/find/${id}`
         );
         setProduct(res.data);
       } catch (err) {}
@@ -149,10 +148,8 @@ const SingleProduct = () => {
   };
 
   const handleAddToCart = () => {
-	  console.log(product,quantity)
     dispatch(addProduct({ ...product, quantity,color,size}));
 };
-console.log(product,quantity)
 
   return (
     <Container>

@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 25%;
+  min-width: 25%;
   padding: 20px;
   background-color: white;
   ${mobile({ width: "75%" })}
@@ -44,7 +44,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  width: 40%;
+  width: 100%;
   border: none;
   padding: 15px 20px;
   background-color: teal;
@@ -74,7 +74,6 @@ const Login = () => {
   const handleInput = (e) => {
     e.preventDefault();
     const userCredentials = { username, password };
-
     login(dispatch, userCredentials);
   };
   
@@ -89,6 +88,7 @@ const Login = () => {
           />
           <Input
             placeholder="password"
+            type='password'
             onBlur={(e) => setPassword(e.target.value)}
           />
           <Button onClick={handleInput}>LOGIN</Button>
