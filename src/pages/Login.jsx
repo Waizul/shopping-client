@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { mobile } from "../responsive";
 import { login } from "../redux/apiCallls";
 
 const Container = styled.div`
@@ -69,12 +70,12 @@ const Link = styled.a`
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
   const dispatch = useDispatch();
-
   const handleInput = (e) => {
     e.preventDefault();
     const userCredentials = { username, password };
-    login(dispatch, userCredentials);
+    login(dispatch, userCredentials,navigate);
   };
   
   return (

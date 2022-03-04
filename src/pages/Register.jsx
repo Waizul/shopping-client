@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { register } from "../redux/apiCallls";
 import { mobile, tablet } from "../responsive";
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -84,9 +85,7 @@ const Register = () => {
         email,
         password,
       };
-      register(dispatch, userInfo);
-
-      navigate("/login");
+      register(dispatch, userInfo, navigate);
     } else {
       window.alert("Passwords do not match.");
     }
