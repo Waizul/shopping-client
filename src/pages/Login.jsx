@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { mobile } from "../responsive";
+import { mobile } from "../globalStyles/responsive";
 import { login } from "../redux/apiCallls";
 
 const Container = styled.div`

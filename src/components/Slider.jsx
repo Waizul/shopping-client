@@ -4,8 +4,8 @@ import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import {sliderItems} from '../data'
 import { ListItemSecondaryAction } from "@mui/material";
 import { useState } from "react";
-import { mobile, tablet } from "../responsive";
 
+import {mobile,tablet} from '../globalStyles/responsive'
 const Container = styled.div`
 	width: 100%;
 	height: 100vh;

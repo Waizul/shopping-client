@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const GlobalStyles = createGlobalStyle`
+ const GlobalStyles = createGlobalStyle`
 * {
     margin: 0;
     padding: 0;
@@ -12,3 +12,5 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
 `
+
+export default GlobalStyles

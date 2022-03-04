@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import Navbar from '../components/Navbar'
 import Announcement from '../components/Announcement'
 import Products from '../components/Products'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
-import { mobile } from '../responsive';
+import { mobile } from '../globalStyles/responsive';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -55,7 +54,6 @@ const ProductList = () => {
 	return (
 		<Container>
 			<Announcement />
-			<Navbar />
 			<Title>{category.toUpperCase()}</Title>
 			<FilterContainer>
 				<Filter>

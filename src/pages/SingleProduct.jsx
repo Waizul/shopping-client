@@ -2,9 +2,8 @@ import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
-import { mobile } from "../responsive";
+import { mobile } from "../globalStyles/responsive";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -153,7 +152,6 @@ const SingleProduct = () => {
 
   return (
     <Container>
-      <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>

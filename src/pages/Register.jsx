@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { register } from "../redux/apiCallls";
-import { mobile, tablet } from "../responsive";
+import { mobile, tablet } from "../globalStyles/responsive";
 
 const Container = styled.div`
   width: 100vw;

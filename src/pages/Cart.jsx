@@ -3,8 +3,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import { mobile, tablet } from "../responsive";
+import { mobile, tablet } from "../globalStyles/responsive";
 import { useDispatch, useSelector } from "react-redux";
 import StripeCheckOut from "react-stripe-checkout";
 import { useState, useEffect } from "react";
@@ -197,7 +196,7 @@ const Cart = () => {
 
   return (
     <Container>
-      <Navbar />
+      {/* <Navbar /> */}
       <Announcement />
       <Wrapper>
         <Title>YOUR BAG</Title>

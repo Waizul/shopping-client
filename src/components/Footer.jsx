@@ -7,7 +7,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CopyrightOutlinedIcon from '@mui/icons-material/CopyrightOutlined';
-import { mobile, tablet } from "../responsive";
+import { mobile, tablet } from "../globalStyles/responsive";
 
 const Container = styled.div`
  

@@ -2,7 +2,8 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import {StyledLink} from '../GlobalStyles'
+import {StyledLink} from '../globalStyles/globalStyles'
+
 const Info = styled.div`
 	opacity: 0;
 	width: 100%;

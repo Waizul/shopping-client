@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { categories } from "../data";
-import { mobile, tablet } from "../responsive";
+import {mobile,tablet,laptop} from '../globalStyles/responsive'
 import CategoryItem from "./CategoryItem";
 
 const Container = styled.div`

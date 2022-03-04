@@ -1,5 +1,7 @@
-import { GlobalStyles } from "./GlobalStyles";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import GlobalStyles from './globalStyles/globalStyles'
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import ProductList from "./pages/ProductList";
@@ -7,7 +9,7 @@ import Register from "./pages/Register";
 import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
 import Success from "./pages/Success";
-import { useSelector } from "react-redux";
+import Navbar from "./components/navbar/Navbar";
 
 
 function App() {
@@ -16,6 +18,7 @@ console.log(user)
   return (
     <BrowserRouter>
       <GlobalStyles />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:category" element={<ProductList />} />
