@@ -4,7 +4,7 @@ import Product from "./Product";
 import { publicRequest } from "../requestMethods";
 
 const Container = styled.div`
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -13,7 +13,7 @@ const Container = styled.div`
 const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+console.log(products)
   useEffect(() => {
     const getProducts = async () => {
       try {

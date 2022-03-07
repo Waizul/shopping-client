@@ -14,8 +14,10 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+padding-top:50px;
   display: flex;
-  ${mobile({ flexDirection: "column", paddingLeft: "10%" })}
+  flex-direction:column ;
+ justify-content:center ;
   ${tablet({ flexDirection: "column", paddingLeft: "10%" })}
 
 `
@@ -24,12 +26,11 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  margin: 0;
 `;
 
 const Logo = styled.h1`
   color: rgb(50, 150, 120);
- font-size: 25px;
+ font-size: 30px;
 `;
 
 const Desc = styled.p`
@@ -38,7 +39,7 @@ const Desc = styled.p`
 
 const SocialContainer = styled.div`
   display: flex;
-  ${mobile({ justifyContent: "center" })}
+ 
   ${tablet({ justifyContent: "center" })}
 `;
 
@@ -56,8 +57,6 @@ const SocialIcon = styled.div`
 
 const Center = styled.div`
   flex: 1;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
 `;
 
@@ -83,7 +82,7 @@ const Right = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
-  ${mobile({ backgroundColor: "#fff8f8" })}
+  background-color: "#fff8f8";
 `;
 
 const ContactItem = styled.div`
@@ -96,7 +95,7 @@ const ContactItem = styled.div`
 `;
 
 const Payment = styled.img`
-  width: 50%;
+  width: 60%;
 `;
 
 const CopyRight = styled.p`
@@ -118,7 +117,7 @@ const Footer = () => {
     <Container>
 		<Wrapper>
       <Left>
-        <Logo>Shopping</Logo>
+        <Logo>ShoppingBD</Logo>
         <Desc>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
@@ -164,12 +163,12 @@ const Footer = () => {
         </ContactItem>
         <ContactItem>
           <MailOutlineIcon className="icon" />
-          contact@shopping.dev
+          contact@shoppingbd.dev
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
 	  </Wrapper>
-	  <CopyRight>All rights reserved to <CopyrightOutlinedIcon className="copyright"/> <span> shoppimg.com.</span></CopyRight>
+	  <CopyRight>All rights reserved to <CopyrightOutlinedIcon className="copyright"/> <span> shoppimgbd.com.</span></CopyRight>
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { mobile } from "../globalStyles/responsive";
 import { login } from "../redux/apiCallls";
@@ -71,11 +71,15 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
+  const location = useLocation()
   const dispatch = useDispatch();
+
+  const from = location.state?.from?.pathname || '/'
+
   const handleInput = (e) => {
     e.preventDefault();
     const userCredentials = { username, password };
-    login(dispatch, userCredentials,navigate);
+    login(dispatch, userCredentials,navigate,from);
   };
   
   return (

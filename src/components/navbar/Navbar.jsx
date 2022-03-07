@@ -2,9 +2,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Badge } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {logout} from '../../redux/apiCallls'
 import { StyledLink } from "../../globalStyles/globalStyles";
 
 import {
@@ -19,13 +19,20 @@ import {
   Right,
   SearchContainer,
   Icon,
+  Button,
+  Username,
 } from "./navbarStyle";
 import { useState } from "react";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
+const user = useSelector(state=>state.user?.currentUser)
+
   const quantity = useSelector((state) => state.cart.quantity);
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleMobile = () => {
     setIsMobile(!isMobile);
@@ -50,12 +57,18 @@ const Navbar = () => {
           <NavItem>
             <StyledLink to="/categories">Categories</StyledLink>
           </NavItem>
+          {user?.email ? <>
+          <Username>{user.username}</Username>
+          <Button onClick={()=>logout(dispatch,navigate)}>Log out</Button>
+          </>:<>
           <NavItem>
             <StyledLink to="/register">Register</StyledLink>
           </NavItem>
           <NavItem>
             <StyledLink to="/login">Log In</StyledLink>
           </NavItem>
+          </>
+          }
         </NavMenu>
 
         <StyledLink to="/cart">

@@ -16,22 +16,24 @@ const Info = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 	cursor: pointer;
 `;
 
 const Container = styled.div`
 	flex: 1;
-	margin: 5px;
-	min-width: 280px;
+	margin: 10px;
+	min-width: 300px;
 	height: 350px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: #f5fbfd;
+	border-radius:10px ;
 	position: relative;
 	&:hover ${Info} {
 		opacity: 1;
+		border-radius:10px ;
 	}
 `;
 
@@ -44,7 +46,10 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-	height: 75%;
+/* width:100% ; */
+	height: 90%;
+	object-fit:cover ;
+	border-radius:10px ;
 	z-index: 2;
 `;
 

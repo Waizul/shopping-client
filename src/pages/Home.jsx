@@ -3,7 +3,7 @@ import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import NewsLetter from "../components/NewsLetter";
 import Products from "../components/Products";
-import Slider from "../components/Slider";
+import Slider from '../components/slider/Slider'
 
 
 const Home = () => {

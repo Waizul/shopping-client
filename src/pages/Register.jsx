@@ -79,13 +79,13 @@ const Register = () => {
     e.preventDefault();
     const fullName = `${fname} ${lname}`;
     if (password === password2) {
-      const userInfo = {
+      const userCredentials = {
         fullName,
         username,
         email,
         password,
       };
-      register(dispatch, userInfo, navigate);
+      register(dispatch, userCredentials, navigate);
     } else {
       window.alert("Passwords do not match.");
     }
