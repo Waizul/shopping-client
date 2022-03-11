@@ -3,6 +3,8 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Announcement from "../../components/Announcement";
 import Footer from "../../components/Footer";
+import {StyledLink} from '../../globalStyles/globalStyles'
+
 import { mobile, tablet } from "../../globalStyles/responsive";
 import { useDispatch, useSelector } from "react-redux";
 import StripeCheckOut from "react-stripe-checkout";
@@ -27,12 +29,12 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <TopButton> <StyledLink to='/'>CONTINUE SHOPPING</StyledLink></TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
         <Bottom>
           <Info>
@@ -77,11 +79,11 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ 0.00</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ 0.00</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>

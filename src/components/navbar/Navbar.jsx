@@ -28,6 +28,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
 const user = useSelector(state=>state.user?.currentUser)
+const admin = useSelector(state=>state.user?.currentUser?.isAdmin)
 
   const quantity = useSelector((state) => state.cart.quantity);
 
@@ -57,6 +58,7 @@ const user = useSelector(state=>state.user?.currentUser)
           <NavItem>
             <StyledLink to="/categories">Categories</StyledLink>
           </NavItem>
+          {admin && <NavItem><StyledLink to='/admin'>Dashboard</StyledLink></NavItem>}
           {user?.email ? <>
           <Username>{user.username}</Username>
           <Button onClick={()=>logout(dispatch,navigate)}>Log out</Button>
@@ -69,6 +71,7 @@ const user = useSelector(state=>state.user?.currentUser)
           </NavItem>
           </>
           }
+
         </NavMenu>
 
         <StyledLink to="/cart">

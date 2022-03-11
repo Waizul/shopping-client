@@ -95,7 +95,7 @@ const ContactItem = styled.div`
 `;
 
 const Payment = styled.img`
-  width: 60%;
+  width: 50%;
 `;
 
 const CopyRight = styled.p`
@@ -155,11 +155,10 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <RoomIcon className="icon" /> 622 Dixie Path , South Tobinchester
-          98336
+          <RoomIcon className="icon" /> Road 2, Baridhara.
         </ContactItem>
         <ContactItem>
-          <PhoneIcon className="icon" /> +1 234 56 78
+          <PhoneIcon className="icon" /> 01710000001
         </ContactItem>
         <ContactItem>
           <MailOutlineIcon className="icon" />

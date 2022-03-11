@@ -4,6 +4,8 @@ import { laptop, mobile, tablet } from "../../globalStyles/responsive";
 export const Container = styled.div`
   height: 50px;
   width: 100%;
+  background-color:darkcyan ;
+  color:white ;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +34,7 @@ export const SearchContainer = styled.div`
   margin-left: 20px;
   padding: 2px;
   border-radius: 5px;
-  color: rgba(50, 150, 120, 0.8);
+  /* color: rgba(50, 150, 120, 0.8); */
   ${laptop({ padding: "5px" })}
   ${tablet({ padding: "3px" })}
 `;
@@ -60,7 +62,7 @@ export const Center = styled.div`
 export const Logo = styled.h1`
   font-size: 20px;
   font-weight: bold;
-  color: rgb(50, 150, 120);
+  /* color: rgb(50, 150, 120); */
   ${tablet({ fontSize: "24px" })};
   ${laptop({ fontSize: "30px" })};
 `;
@@ -73,7 +75,8 @@ export const Right = styled.div`
 `;
 
 export const NavMenu = styled.ul`
-  color: ${(props) => (props.isMobile ? "white" : "black")};
+  /* color: ${(props) => (props.isMobile ? "white" : "black")}; */
+  color:white ;
   display: ${(props) => (props.isMobile ? "flex" : "none")};
   flex-direction: ${(props) => (props.isMobile ? "column" : "row")};
   align-items: center;
@@ -87,8 +90,8 @@ export const NavMenu = styled.ul`
   right: 0;
   z-index: 3;
   & > li {
-    border-bottom: ${(props) =>
-      props.isMobile ? "2px solid rgb(28,28,105)" : "2px solid white"};
+    /* border-bottom: ${(props) =>
+      props.isMobile ? "2px solid rgb(28,28,105)" : "2px solid white"}; */
   }
   ${laptop({
     width: "100%",
@@ -107,7 +110,7 @@ export const NavMenu = styled.ul`
     height: "60px",
     top: "0",
     fontSize: "18px",
-    color: "gray",
+    // color: "gray",
   })}
 `;
 
@@ -120,7 +123,7 @@ export const NavItem = styled.li`
 `;
 
 export const Icon = styled.div`
-  color: green;
+  color: white;
   cursor: pointer;
   ${tablet({ marginRight: "0" })};
   & > .menu {
@@ -133,4 +136,12 @@ export const Icon = styled.div`
 export const Username = styled.span`
 `
 export const Button = styled.button`
+padding:5px 10px ;
+border-radius:5px ;
+cursor: pointer;
+border:none ;
+&:hover{
+  font-weight: bold;
+}
+
 `
